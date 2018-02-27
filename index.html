@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>简单好用的jQuery插件——Tdrag.js可以任意拖拽div内容</title>
+  <script src="js/jquery1.7.2.js"></script>
+  <script src="js/Tdrag.js"></script>
+  <style>
+    *{margin:0;padding:0;list-style:none;}
+    .center{
+      /*position: relative;*/
+      /*float:right;*/
+      border: 1px solid #ff0033;
+      height: 550px;
+      margin: 30px;
+      position: relative;
+      width: 800px;
+    }
+    .moudele{
+      width:300px;
+      height:100px;
+      border:5px solid red;
+      float:left;
+      /*position:relative;*/
+      /*position: absolute;*/
+      margin:20px;
+    }
+    .title-box{
+      width:300px;
+      height:10px;
+    }
+    .content{
+      width: 300px;
+      height:80px;
+    }  
+    .div1{
+      float: left;
+    }
+  </style>
+</head>
+<body>
+  <!-- 代码部分begin -->
+
+<div class='center'>
+  <div class='moudele div1'>
+    <div class="title-box">one</div>
+    <div class='content'>mmmmm</div>
+  </div>
+  <div class=' moudele div1'>
+    <div class="title-box">2</div>
+    <div class='content'>mmmmm</div>
+  </div>
+  <div class='moudele div1' >
+    <div class="title-box">3</div>
+    <div class='content'>mmmmm</div>
+  </div>
+  <div class='moudele div1'>
+    <div class="title-box">4</div>
+    <div class='content'>mmmmm</div>
+  </div>
+</div>
+
+  
+  <script>
+    $(function(){
+      $(".lanren").Tdrag();
+
+    $(".moudele").Tdrag({
+    scope:".center",
+    pos:true,
+    handle:".title-box",
+    moveClass:"tezml",
+    dragChange:true
+});
+
+
+    })
+
+
+  </script>
+  <!-- 代码部分end -->
+</body>
+</html>
